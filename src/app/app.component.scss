@@ -1,0 +1,73 @@
+.container-fill{
+    display: flex;
+}
+
+#player {
+    width: 70%;
+    height: 100vh;
+    background-color: #222222;
+    color: #C6C6C6;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img.logo {
+    margin-bottom: 1rem;
+    width: 15rem;
+}
+
+.slider {
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.principal {
+    width: 14rem;
+    height: 14rem;
+    background: url(../assets/images/outros/fundo_capa.png) no-repeat center;
+    border-radius: 1rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img.capa {
+    border-radius: 1rem;
+    width: 90%;
+}
+
+.line {
+    width: 75%;
+    background: linear-gradient(
+        to right,
+        #ffbd84,
+        #df9bff
+    );
+    height: 0.35rem;
+    border-radius: 0.5rem;
+    margin: 3rem 0 1rem 0;
+}
+
+img.prev, img.next {
+    width: 3rem;
+}
+
+img.play {
+    width: 4rem;
+    margin: 0 1rem 0 1rem;
+
+}
+
+#lista {
+    width: 30%;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    background-color: #353535;
+    border-radius: 2rem 0 0 2rem;
+    box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.1);
+}
