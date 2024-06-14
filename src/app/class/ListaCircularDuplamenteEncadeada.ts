@@ -2,9 +2,8 @@ import { No } from './No';
 import { Musica } from '../interface/musica.interface';
 
 export class ListaCircularDuplamenteEncadeada {
-  private cursor?: No | null;
-//   private cursorAux?: No | null;
-  private quantidade: number = 0;
+   private cursor?: No | null;
+   private quantidade: number = 0;
 
   constructor() {}
 
