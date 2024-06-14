@@ -70,4 +70,31 @@ img.play {
     background-color: #353535;
     border-radius: 2rem 0 0 2rem;
     box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        margin-top: 2rem;
+        font-weight: bold;
+        color: #EB95AD;
+        margin-bottom: 2rem;
+    }
+
+    .playlist {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        row-gap: .4rem;
+
+        label {
+            color: #fff;
+        }
+    }
+
+    .create-music{
+        margin-bottom: 2rem;
+    }
 }

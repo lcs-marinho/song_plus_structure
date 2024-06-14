@@ -26,6 +26,12 @@
 
     </div>
     <div id='lista'>
-        
+        <div class="playlist">
+            <h1>PLAYLIST</h1>
+            <label></label>
+        </div>
+        <div class="create-music">
+            <app-select-music (addMusic)="addListCircular($event)"></app-select-music>
+        </div>
     </div>
 </section>

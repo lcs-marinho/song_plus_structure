@@ -73,6 +73,23 @@ export class ListaCircularDuplamenteEncadeada {
     // this.removerNo(noAtual!);
   }
 
+  public copiarListCircular(): Musica[] {
+    console.log(this.quantidade)
+    let listaEspelhada: Musica[] = [];
+    const nomeInicio = this.cursor?.getDado()?.nome;
+    if(this.quantidade == 1) {
+      listaEspelhada.push(this.cursor?.getDado()!);
+    } else {
+      while(this.cursor?.getProximo()!.getDado()?.nome != nomeInicio) {
+        console.log(this.cursor?.getDado())
+        listaEspelhada.push(this.cursor?.getDado()!);
+        this.avancar();
+      }
+    }
+    console.log(listaEspelhada)
+    return listaEspelhada;
+  }
+
   public avancar(): void {
     this.cursor = this.cursor!.getProximo();
   }

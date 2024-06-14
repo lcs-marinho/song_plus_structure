@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Musica } from '../interface/musica.interface';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './select-music.component.scss'
 })
 export class SelectMusicComponent {
-  addMusic: EventEmitter<number> = new EventEmitter();
+  @Output() addMusic: EventEmitter<number> = new EventEmitter();
   form?: FormGroup;
   listaMusicas: Musica[] = [];
 
