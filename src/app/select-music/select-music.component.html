@@ -1,0 +1,10 @@
+<form [formGroup]="form!" (submit)="onSubmit()">
+  <select formControlName="musica">
+    <option selected value="">Selecione uma música</option>
+    <option *ngFor="let musica of listaMusicas;index as i" [value]="i">
+      {{ musica.nome }} - {{ musica.artista }}
+    </option>
+  </select>
+
+  <button>+ Adicionar</button>
+</form>
