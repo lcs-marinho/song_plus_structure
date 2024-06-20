@@ -7,10 +7,15 @@ export class ListaCircularDuplamenteEncadeada {
 
   constructor() {}
 
-  public imprimirCursor(): void {
+  public imprirmirQuantidade(): number {
+    return this.quantidade;
+  }
+
+  public imprimirCursor(): No {
     if (this.cursor != null) {
       console.log('Cursor: ' + '{nome: ' + this.cursor?.getDado()?.nome + '}');
     }
+    return this.cursor!;
   }
 
   public imprimirLista(): void {
