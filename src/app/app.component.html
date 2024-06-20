@@ -1,31 +1,44 @@
 <section class="container-fill">
-    <div id="player">
-        <img class="logo" src="assets/images/svg/logo.svg">
-        
-        <h6>TOCANDO AGORA</h6>
+  <div id="player">
+    <img class="logo" src="assets/images/svg/logo.svg" />
 
-        <div class="slider">
-            <div class="anter"></div>
+    <h6>{{ msgAudio || "SELECIONE UMA MÚSICA" }}</h6>
 
-            <div class="principal">
-                <img class="capa" src="assets/images/outros/gnrs.jpg">
-            </div>
+    <div class="slider">
+      <div class="anter"></div>
 
-            <div class="prox"></div>
-        </div>
+      <div class="principal" *ngIf="cursor?.getDado()">
+        <img class="capa" src="assets/images/outros/song.jpg" />
+      </div>
 
-        <h3>SWEET CHILD O'MINE</h3>
-        
-        <div class="line"></div>
-
-        <div class="bottons">
-            <img class="prev" src="assets/images/svg/prev.svg">
-            <img class="play" src="assets/images/svg/play.svg">
-            <img class="next" src="assets/images/svg/next.svg">
-        </div>
-
+      <div class="prox"></div>
     </div>
-    <div id='lista'>
-        
+
+    <h3 *ngIf="cursor?.getDado()">
+      {{ this.cursor?.getDado()?.nome }} - {{ this.cursor?.getDado()?.artista }}
+    </h3>
+
+    <div class="line" *ngIf="cursor?.getDado()"></div>
+
+    <div class="bottons" *ngIf="cursor?.getDado()">
+      <img class="prev" src="assets/images/svg/prev.svg" (click)="voltarV()" />
+      <img class="play" src="assets/images/svg/play.svg" />
+      <img class="next" src="assets/images/svg/next.svg" (click)="avancarV()" />
     </div>
+  </div>
+  <div id="lista">
+    <h1>PLAYLIST</h1>
+
+    <app-select-music #select (addMusic)="musicaAdd($event)"></app-select-music>
+
+    <ul class="playlist">
+      <li
+        [class.cursor]="cursor?.getDado()?.nome == musica.nome"
+        *ngFor="let musica of listaEspelhada; index as i"
+      >
+        {{ i + 1 }} - {{ musica.nome }} - {{ musica.artista }}
+        <label (click)="remover(musica, i)">remover</label>
+      </li>
+    </ul>
+  </div>
 </section>
